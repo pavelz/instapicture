@@ -44,7 +44,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
      }
     
     @IBAction func SendImage(button: UIButton){
-        
+        let data = ImageView.image?.jpegData(compressionQuality: 0.1)
+        print("HELLO")
     }
     
 }

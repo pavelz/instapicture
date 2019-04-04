@@ -26,7 +26,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="a37-r3-JdF">
-                                <rect key="frame" x="143" y="583" width="88" height="30"/>
+                                <rect key="frame" x="143" y="572" width="88" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Select Photo"/>
                             </button>
@@ -35,16 +35,19 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="AA1-wh-deo">
-                                <rect key="frame" x="169" y="621" width="36" height="30"/>
+                                <rect key="frame" x="156" y="610" width="62" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Send"/>
+                                <connections>
+                                    <action selector="SendImageWithButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="clC-Gu-4Wu"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <connections>
                         <outlet property="ImageView" destination="t14-O6-RCN" id="9ao-t9-pr2"/>
-                        <outlet property="SendImage" destination="AA1-wh-deo" id="Trs-Pb-mHv"/>
+                        <outlet property="SendImage" destination="AA1-wh-deo" id="bpN-Nm-41Q"/>
                         <outlet property="selectPhoto" destination="a37-r3-JdF" id="W14-Dy-WUZ"/>
                         <outlet property="takePhoto" destination="BMs-eT-GSV" id="bhk-WM-ekc"/>
                     </connections>
