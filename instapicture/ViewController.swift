@@ -48,12 +48,11 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBAction func SendImage(button: UIButton){
         let data = ImageView.image?.jpegData(compressionQuality: 0.1)
         if let image = data {
-            HTTP.POST("http://kek.arslogi.ca:3001/photos",parameters: ["filename": "image.jpg", "file": Upload(data: image, fileName: "image.jpg", mimeType: "image/jpeg")]) { response in
+            HTTP.POST("http://kek.arslogi.ca:3001/photos",parameters: ["photo[name]": "image.jpg" ,"photo[image]": Upload(data: image, fileName: "image.jpg", mimeType: "image/jpeg" )]) { response in
                 if let err = response.error {
-                     print("Error: \(err.localizedDescription)")
+                    print("Error: \(err.localizedDescription)")
                     return
                 }
-                
             }
         }
         
