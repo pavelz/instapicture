@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftHTTP
 
 class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
@@ -43,9 +44,19 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         picker.dismiss(animated: true, completion: nil)
      }
     
+    
     @IBAction func SendImage(button: UIButton){
         let data = ImageView.image?.jpegData(compressionQuality: 0.1)
-        print("HELLO")
+        if let image = data {
+            HTTP.POST("http://kek.arslogi.ca:3001/photos",parameters: ["filename": "image.jpg", "file": Upload(data: image, fileName: "image.jpg", mimeType: "image/jpeg")]) { response in
+                if let err = response.error {
+                     print("Error: \(err.localizedDescription)")
+                    return
+                }
+                
+            }
+        }
+        
     }
     
 }
