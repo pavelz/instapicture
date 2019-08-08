@@ -62,8 +62,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         }
     }
 
-    
-    
     @IBAction func takePhoto(button: UIButton){
         if UIImagePickerController.isSourceTypeAvailable(.camera){
             print("camera avail")
@@ -110,8 +108,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         content.badge = 1
         content.sound = UNNotificationSound.default
         
-        print("Hey")
-        
+
         let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5.0, repeats: false)
         print("triggering")
         let request = UNNotificationRequest(identifier: "notification", content: content, trigger: trigger)
@@ -127,14 +124,14 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
 
         if let image = data {
             
-            let paramet : [String:Any] = [
+            let parameters: [String:Any] = [
                 "photo[name]": "image.jpg",
                 "photo[image]": Upload(data:image, fileName: "image.jpg", mimeType: "image/jpeg" ),
                 "location[lat]": NSString(format: "%f",locs[0].coordinate.latitude as Double),
-11                "location[lngZ1]": NSString(format: "%f",locs[0].coordinate.longitude as Double)
+                "location[lng]": NSString(format: "%f",locs[0].coordinate.longitude as Double)
             ]
             
-            HTTP.POST("http://kek.arslogi.ca:3001/photos", parameters: paramet) { response in
+            HTTP.POST("http://kek.arslogi.ca:3001/photos", parameters: parameters) { response in
                 if let err = response.error {
                     print("Error: \(err.localizedDescription)")
                     return
