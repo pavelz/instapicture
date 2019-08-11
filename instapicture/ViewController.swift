@@ -10,7 +10,11 @@ import UIKit
 import SwiftHTTP
 import UserNotifications
 import CoreLocation
+import CloudKit
 
+enum KeychainError: Swift.Error {
+    case whoops
+}
 class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, CLLocationManagerDelegate {
     var locs: [CLLocation] = []
     @IBOutlet var selectPhoto: UIButton!
@@ -31,14 +35,55 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
                 print("D'oh")
             }
         }
-        
         enableLocationServices()
     }
-    
+
+    func findUserPassword() throws -> String {
+        let server = "kek.arslogi.ca"
+
+        let query: [String: Any] = [kSecClass as String: kSecClassInternetPassword,
+                                    kSecAttrServer as String: server,
+                                    kSecMatchLimit as String: kSecMatchLimitOne,
+                                    kSecReturnAttributes as String: true,
+                                    kSecReturnData as String: true]
+        var item: CFTypeRef?
+        let status = SecItemCopyMatching(query as CFDictionary, &item)
+        if status != errSecItemNotFound {print("password found")} else {print("passworod not found");print(status)}
+        if status == errSecSuccess {print("indeed found")} else { print("wth some error");print(status); }
+
+        // extract password
+        guard let existingItem = item as? [String : Any],
+              let passwordData = existingItem[kSecValueData as String] as? Data,
+              let password = String(data: passwordData, encoding: String.Encoding.utf8),
+              let account = existingItem[kSecAttrAccount as String] as? String
+        else {
+            throw KeychainError.whoops
+        }
+
+        //let credentials = Credentials(username: account, password: password)
+        return password
+    }
+
+    func addAuthUser(account: String, password: String) {
+        let server = "kek.arslogi.ca"
+        var query: [String: Any] = [kSecClass as String: kSecClassInternetPassword,
+                                    kSecAttrAccount as String: account,
+                                    kSecAttrServer as String: server,
+                                    kSecValueData as String: password]
+
+        let status = SecItemAdd(query as CFDictionary, nil)
+        if status == errSecSuccess {print("Success Storing password")} else { print(status); print("error storing password"); }
+    }
+
+    func setAuthUser(account: String, pasword: String) {
+
+    }
+
+
     let locationManager = CLLocationManager()
     func enableLocationServices() {
         locationManager.delegate = self
-        
+         false
         switch CLLocationManager.authorizationStatus() {
         case .notDetermined:
             // Request when-in-use authorization initially

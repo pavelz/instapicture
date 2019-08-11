@@ -15,6 +15,7 @@
 		E96AF321224F6C3D00ADD2A9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E96AF31F224F6C3D00ADD2A9 /* LaunchScreen.storyboard */; };
 		E96AF32C224F6C3D00ADD2A9 /* instapictureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96AF32B224F6C3D00ADD2A9 /* instapictureTests.swift */; };
 		E96AF337224F6C3D00ADD2A9 /* instapictureUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96AF336224F6C3D00ADD2A9 /* instapictureUITests.swift */; };
+		E9C8F6E822FD3082009A0092 /* AuthenticationServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9C8F6E722FD3082009A0092 /* AuthenticationServices.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +51,8 @@
 		E96AF332224F6C3D00ADD2A9 /* instapictureUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = instapictureUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E96AF336224F6C3D00ADD2A9 /* instapictureUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = instapictureUITests.swift; sourceTree = "<group>"; };
 		E96AF338224F6C3D00ADD2A9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E9C8F6E622FD3082009A0092 /* instapicture.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = instapicture.entitlements; sourceTree = "<group>"; };
+		E9C8F6E722FD3082009A0092 /* AuthenticationServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AuthenticationServices.framework; path = System/Library/Frameworks/AuthenticationServices.framework; sourceTree = SDKROOT; };
 		EEA2331A1CC361B558F3DE4C /* Pods_instapicture.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_instapicture.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -58,6 +61,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E9C8F6E822FD3082009A0092 /* AuthenticationServices.framework in Frameworks */,
 				AB3FD8F06A17EBCAD7580022 /* Pods_instapicture.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -91,6 +95,7 @@
 		DF6DA79EAD11ED1FF79EE8C1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E9C8F6E722FD3082009A0092 /* AuthenticationServices.framework */,
 				EEA2331A1CC361B558F3DE4C /* Pods_instapicture.framework */,
 			);
 			name = Frameworks;
@@ -121,6 +126,7 @@
 		E96AF315224F6C3C00ADD2A9 /* instapicture */ = {
 			isa = PBXGroup;
 			children = (
+				E9C8F6E622FD3082009A0092 /* instapicture.entitlements */,
 				E96AF316224F6C3C00ADD2A9 /* AppDelegate.swift */,
 				E96AF318224F6C3C00ADD2A9 /* ViewController.swift */,
 				E96AF31A224F6C3C00ADD2A9 /* Main.storyboard */,
@@ -220,6 +226,11 @@
 					E96AF312224F6C3C00ADD2A9 = {
 						CreatedOnToolsVersion = 10.1;
 						LastSwiftMigration = 1010;
+						SystemCapabilities = {
+							com.apple.AutoFillCredentialProvider = {
+								enabled = 1;
+							};
+						};
 					};
 					E96AF326224F6C3D00ADD2A9 = {
 						CreatedOnToolsVersion = 10.1;
@@ -506,6 +517,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = instapicture/instapicture.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = S95Q96986P;
 				INFOPLIST_FILE = instapicture/Info.plist;
@@ -528,6 +540,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = instapicture/instapicture.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = S95Q96986P;
 				INFOPLIST_FILE = instapicture/Info.plist;
