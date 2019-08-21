@@ -9,41 +9,63 @@
 import UIKit
 import SwiftHTTP
 
-class LoginController: UIViewController {
+class RailsResponse: Codable{
+    var email: String
+    var authentication_token: String
+}
+
+class LoginController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var Username: UITextField!
     @IBOutlet weak var Login: UIButton!
     
     @IBOutlet weak var Password: UITextField!
     override func viewDidLoad() {
+        self.Password.delegate = self
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField == Password {
+            textField.resignFirstResponder()
+            LogIn()
+            return false
+        }
+        return true
+    }
     
     @IBAction func LogIn(){
         print("Login already")
-        priznt(Username.text ?? "")
+        print(Username.text ?? "")
         print(Password.text ?? "")
+        
         // http://kek.arslogi.ca:3001/users/sign_in
         let parameters: [String:Any] = [
-            "user[email]": Username.text ?? "",
-            "user[password]": Password.text ?? "",
-            "user[mobile_type]": "ios",
-            "user[mobile_key]":
-            "APA91bG6G4UvjeCWvb8mMAH1ZO3I-8FB3nkRPyCHnwZiXgd16HK18GgoV5n7gjJtZNs038iaFGutzdxnhes3WyaXEX52-xmOyvuEK8S1abBdpuhD9AD5bzLWeu-1Ow_yZRTVg3Nypz1z"
+            "user": [
+            "email": Username.text ?? "",
+            "password": Password.text ?? ""
             ]
+        ]
         
-            HTTP.POST("http://kek.arslogi.ca:3001/users/sign_in", parameters: parameters) { response in
+        HTTP.POST("http://kek.arslogi.ca:3001/users/sign_in", parameters: parameters, headers: ["ContentType":"application/json", "Accept":"application/json"], requestSerializer: JSONParameterSerializer()) { response in
                 if let err = response.error {
                     print("Error: \(err.localizedDescription)")
                     return
                 }
-                
+                let decoder = JSONDecoder()
+        
+                    let data = try! decoder.decode(RailsResponse.self, from: response.data)
+                    print(data.authentication_token)
+            
+                    DispatchQueue.main.async {
+                        self.performSegue(withIdentifier: "go", sender: self)
+                    }
                 print("posted login info!")
             }
 
     }
+
     /*
     // MARK: - Navigation
 
