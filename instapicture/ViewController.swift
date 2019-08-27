@@ -107,22 +107,23 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         }
     }
 
-    @IBAction func takePhoto(button: UIButton){
-        if UIImagePickerController.isSourceTypeAvailable(.camera){
+    func selectImage(source:UIImagePickerController.SourceType){
+        if UIImagePickerController.isSourceTypeAvailable(source){
             print("camera avail")
             let picker: UIImagePickerController = UIImagePickerController()
-
+            
             picker.delegate = self
             picker.allowsEditing = true
-            picker.sourceType = .camera
+            picker.sourceType = source
             self.present(picker, animated:true, completion: nil)
         }
     }
+    @IBAction func takePhoto(button: UIButton){
+        selectImage(source: .camera)
+    }
     
     @IBAction func pickImage(_ sender: Any) {
-        //scheduleNotification()
-        locationManager.requestLocation()
-        
+        selectImage(source: .photoLibrary)
     }
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         print("Error")
@@ -133,12 +134,15 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         locs = locations
     }
     
-    
+ 
+
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         
         if let pickedImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
-            ImageView.contentMode = .scaleAspectFill
+            ImageView.contentMode = .scaleAspectFill    
+            ImageView.clipsToBounds = true
             ImageView.image = pickedImage
+            locationManager.requestLocation()
         }
 
         picker.dismiss(animated: true, completion: nil)
@@ -162,13 +166,14 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
     
     @IBAction func SendImage(button: UIButton){
+        print("send pressed")
         let data = ImageView.image?.jpegData(compressionQuality: 0.1)
         if locs.count == 0 {
             return
         }
 
         if let image = data {
-            
+            print("about to send")
             let parameters: [String:Any] = [
                 "photo[name]": "image.jpg",
                 "photo[image]": Upload(data:image, fileName: "image.jpg", mimeType: "image/jpeg" ),
@@ -181,6 +186,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
                     print("Error: \(err.localizedDescription)")
                     return
                 }
+                print("sent")
                 self.scheduleNotification()
             }
         }

@@ -59,7 +59,7 @@ class LoginController: UIViewController, UITextFieldDelegate {
                     print(data.authentication_token)
             
                     DispatchQueue.main.async {
-                        self.performSegue(withIdentifier: "go", sender: self)
+                        self.performSegue(withIdentifier: "go", sender: nil)
                     }
                 print("posted login info!")
             }
