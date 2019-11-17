@@ -48,7 +48,7 @@ class LoginController: UIViewController, UITextFieldDelegate {
             ]
         ]
         
-        HTTP.POST("http://kek.arslogi.ca:3001/users/sign_in", parameters: parameters, headers: ["ContentType":"application/json", "Accept":"application/json"], requestSerializer: JSONParameterSerializer()) { response in
+        HTTP.POST("http://127.0.0.1:3001/users/sign_in", parameters: parameters, headers: ["ContentType":"application/json", "Accept":"application/json"], requestSerializer: JSONParameterSerializer()) { response in
                 if let err = response.error {
                     print("Error: \(err.localizedDescription)")
                     return

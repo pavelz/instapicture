@@ -11,6 +11,7 @@ import SwiftHTTP
 import UserNotifications
 import CoreLocation
 import CloudKit
+import AVKit
 
 enum KeychainError: Swift.Error {
     case whoops
@@ -25,6 +26,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        Config.serverURL()
         // Do any additional setup after loading the view, typically from a nib.
         let center = UNUserNotificationCenter.current()
         
@@ -35,6 +37,14 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
                 print("D'oh")
             }
         }
+        // audio video session
+        var session =  AVAudioSession.sharedInstance()
+        do {
+            try session.setCategory(AVAudioSession.Category.record, mode: AVAudioSession.Mode.default, options: [])
+        } catch is NSError {
+            print("Audio Session whoops")
+        }
+
         enableLocationServices()
     }
 
@@ -181,11 +191,16 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
                 "location[lng]": NSString(format: "%f",locs[0].coordinate.longitude as Double)
             ]
             
-            HTTP.POST("http://kek.arslogi.ca:3001/photos", parameters: parameters) { response in
+            HTTP.POST(Config.serverURL() + "/photos", parameters: parameters) { response in
+
                 if let err = response.error {
                     print("Error: \(err.localizedDescription)")
                     return
+                } else {
+                    print("\(response.description)")
+                    print("\(response.data)")
                 }
+
                 print("sent")
                 self.scheduleNotification()
             }

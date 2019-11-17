@@ -49,6 +49,12 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>ServerConfig</key>
+	<array>
+		<string>http://10.0.2.2:3001</string>
+		<string>http://192.168.1.61:3001</string>
+		<string>http://kek.arslogi.ca:3001</string>
+	</array>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
