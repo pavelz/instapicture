@@ -44,7 +44,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         } catch is NSError {
             print("Audio Session whoops")
         }
-
+        
         enableLocationServices()
     }
 
