@@ -1,11 +1,13 @@
 PODS:
   - FLKAutoLayout (0.2.1)
+  - Locksmith (4.0.0)
   - ORStackView (3.0.1):
     - FLKAutoLayout (~> 0.2)
   - SwiftHTTP (3.0.1)
   - SwiftyJSON (4.0.0)
 
 DEPENDENCIES:
+  - Locksmith
   - ORStackView
   - SwiftHTTP
   - SwiftyJSON
@@ -13,16 +15,18 @@ DEPENDENCIES:
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - FLKAutoLayout
+    - Locksmith
     - ORStackView
     - SwiftHTTP
     - SwiftyJSON
 
 SPEC CHECKSUMS:
   FLKAutoLayout: 9db6b30c2008d230da608e62c607b11c23b942e6
+  Locksmith: e9bebbaaa4cee3c511bc358a44f843c3fe00e21f
   ORStackView: a1bb52748cd0ae29891c140baf22ff8972fb363c
   SwiftHTTP: e94f1aa8cde58637dcc0100f6349de31a3337fde
   SwiftyJSON: 070dabdcb1beb81b247c65ffa3a79dbbfb3b48aa
 
-PODFILE CHECKSUM: 3dedf2b0418d3a112557aebfeefca5ac8c25401f
+PODFILE CHECKSUM: 4ae892fc534f8df399d6ba02e83868ff5a4520a9
 
 COCOAPODS: 1.5.3
