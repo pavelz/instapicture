@@ -5,4 +5,5 @@ target 'instapicture' do
   pod 'ORStackView'
   pod 'SwiftyJSON'
   pod 'SwiftHTTP'
+  pod 'Locksmith'
 end

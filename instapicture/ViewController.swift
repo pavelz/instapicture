@@ -12,6 +12,7 @@ import UserNotifications
 import CoreLocation
 import CloudKit
 import AVKit
+import Locksmith
 
 enum KeychainError: Swift.Error {
     case whoops
@@ -21,15 +22,15 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBOutlet var selectPhoto: UIButton!
     @IBOutlet var takePhoto: UIButton!
     @IBOutlet var ImageView: UIImageView!
-    
+
     @IBOutlet var SendImage: UIButton!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         Config.serverURL()
         // Do any additional setup after loading the view, typically from a nib.
         let center = UNUserNotificationCenter.current()
-        
+
         center.requestAuthorization(options: [.alert, .badge, .sound]) { (granted, error) in
             if granted {
                 print("Yay!")
@@ -44,7 +45,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         } catch is NSError {
             print("Audio Session whoops")
         }
-        
+
         enableLocationServices()
     }
 
@@ -99,17 +100,17 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             // Request when-in-use authorization initially
             locationManager.requestWhenInUseAuthorization()
             break
-            
+
         case .restricted, .denied:
             // Disable location features
             //disableMyLocationBasedFeatures()
             break
-            
+
         case .authorizedWhenInUse:
             // Enable basic location features
             //enableMyWhenInUseFeatures()
             break
-            
+
         case .authorizedAlways:
             // Enable any of your app's location features
             //enableMyAlwaysFeatures()
@@ -121,7 +122,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         if UIImagePickerController.isSourceTypeAvailable(source){
             print("camera avail")
             let picker: UIImagePickerController = UIImagePickerController()
-            
+
             picker.delegate = self
             picker.allowsEditing = true
             picker.sourceType = source
@@ -131,25 +132,25 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBAction func takePhoto(button: UIButton){
         selectImage(source: .camera)
     }
-    
+
     @IBAction func pickImage(_ sender: Any) {
         selectImage(source: .photoLibrary)
     }
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         print("Error")
     }
-    
+
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         print("Locate \(locations)")
         locs = locations
     }
-    
- 
+
+
 
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        
+
         if let pickedImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
-            ImageView.contentMode = .scaleAspectFill    
+            ImageView.contentMode = .scaleAspectFill
             ImageView.clipsToBounds = true
             ImageView.image = pickedImage
             locationManager.requestLocation()
@@ -157,16 +158,16 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
 
         picker.dismiss(animated: true, completion: nil)
     }
-    
+
     func scheduleNotification() {
         let center = UNUserNotificationCenter.current()
-        
+
         let content = UNMutableNotificationContent()
         content.title = "Late wake up call"
         content.body = "The early bird catches the worm, but the second mouse gets the cheese."
         content.badge = 1
         content.sound = UNNotificationSound.default
-        
+
 
         let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5.0, repeats: false)
         print("triggering")
@@ -174,7 +175,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         center.add(request,withCompletionHandler: nil)
         print("triggered")
     }
-    
+
     @IBAction func SendImage(button: UIButton){
         print("send pressed")
         let data = ImageView.image?.jpegData(compressionQuality: 0.1)
@@ -184,14 +185,19 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
 
         if let image = data {
             print("about to send")
+            let locker = Locksmith.loadDataForUserAccount(userAccount: "account")
+            let token = locker?["token"]
             let parameters: [String:Any] = [
                 "photo[name]": "image.jpg",
                 "photo[image]": Upload(data:image, fileName: "image.jpg", mimeType: "image/jpeg" ),
                 "location[lat]": NSString(format: "%f",locs[0].coordinate.latitude as Double),
                 "location[lng]": NSString(format: "%f",locs[0].coordinate.longitude as Double)
             ]
-            
-            HTTP.POST(Config.serverURL() + "/photos", parameters: parameters) { response in
+
+            HTTP.POST(Config.serverURL() + "/photos", parameters: parameters, headers: [
+                "X-User-Email": locker?["email"] as? String ?? "",
+                "X-User-Token": token as? String ?? ""
+            ]) { response in
 
                 if let err = response.error {
                     print("Error: \(err.localizedDescription)")
@@ -206,6 +212,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             }
         }
     }
-    
+
 }
 
