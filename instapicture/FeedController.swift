@@ -11,13 +11,9 @@ import SwiftyJSON
 import CoreGraphics
 
 struct MediaItem: Codable {
-    let url: String
-    let className: String
     let image: Data
 
     enum CodingKeys: String, CodingKey { // FIX for 'class' field
-        case className = "class"
-        case url = "url"
         case image = "image"
     }
 }
@@ -42,7 +38,13 @@ class FeedController: UIViewController, UINavigationControllerDelegate {
         ]) { response in
             // populate UI elements - images
             let decoder = JSONDecoder()
-            let data = try! decoder.decode([MediaItem].self, from: response.data)
+            let data:[MediaItem]
+            do {
+                data = try decoder.decode([MediaItem].self, from: response.data)
+            } catch {
+                print("THERE was an error getting photos")
+                return
+            }
 
             DispatchQueue.main.async {
                 print("IMAGES")
@@ -58,16 +60,23 @@ class FeedController: UIViewController, UINavigationControllerDelegate {
                 //self.Images.centerXAnchor.constraint(equalTo: self.Scroller.centerXAnchor).isActive = true
 
                 for bit in data {
-                    print(bit.url)
+                    //print(bit.url)
 
                     let image = UIImage(data: bit.image)
                     height += Int(image?.size.height ?? 0) + 60 // 40 - spacing set above
 
-                    let view = UIImageView()
-                    view.image = image
+                    let imageView = UIImageView()
+                    if image?.size.width ?? 0.0 > image?.size.height ?? 0.0 {
+                        imageView.contentMode = .scaleAspectFit
+                        //since the width > height we may fit it and we'll have bands on top/bottom
+                    } else {
+                        imageView.contentMode = .scaleAspectFill
+                        //width < height we fill it until width is taken up and clipped on top/bottom
+                    }
+                    imageView.image = image
                     print("size \(image?.size)")
-                    view.frame.size = CGSize(width: image?.size.width ?? 0, height: image?.size.height ?? 0)
-                    self.Images.addArrangedSubview(view)
+                    //imageView.frame.size = CGSize(width: image?.size.width ?? 0, height: image?.size.height ?? 0)
+                    self.Images.addArrangedSubview(imageView)
                 }
                 self.Scroller.contentSize = CGSize(width: 400, height: height)
                 print("height: \(height)")
