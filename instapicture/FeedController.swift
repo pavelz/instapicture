@@ -66,6 +66,7 @@ class FeedController: UIViewController, UINavigationControllerDelegate {
                     height += Int(image?.size.height ?? 0) + 60 // 40 - spacing set above
 
                     let imageView = UIImageView()
+
                     if image?.size.width ?? 0.0 > image?.size.height ?? 0.0 {
                         imageView.contentMode = .scaleAspectFit
                         //since the width > height we may fit it and we'll have bands on top/bottom
@@ -74,6 +75,15 @@ class FeedController: UIViewController, UINavigationControllerDelegate {
                         //width < height we fill it until width is taken up and clipped on top/bottom
                     }
                     imageView.image = image
+
+                    var displayimageHeightConstraint: NSLayoutConstraint! = nil
+                    if imageView.frame.size.width < imageView.image?.size.width ?? 0 {
+
+                        let constant = imageView.frame.size.width / (imageView.image?.size.width)! * (imageView.image?.size.height)!
+                        displayimageHeightConstraint = NSLayoutConstraint(item: imageView, attribute: .width, relatedBy: .equal, toItem: imageView, attribute: .height, multiplier: 1, constant: constant)
+                        imageView.addConstraint(displayimageHeightConstraint)
+                    }
+
                     print("size \(image?.size)")
                     //imageView.frame.size = CGSize(width: image?.size.width ?? 0, height: image?.size.height ?? 0)
                     self.Images.addArrangedSubview(imageView)
