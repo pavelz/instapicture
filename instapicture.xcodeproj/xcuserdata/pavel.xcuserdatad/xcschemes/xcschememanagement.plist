@@ -9,6 +9,24 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
+		<key>instapictureTests.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>8</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>E96AF312224F6C3C00ADD2A9</key>
+		<dict>
+			<key>primary</key>
+			<true />
+		</dict>
+		<key>E96AF326224F6C3D00ADD2A9</key>
+		<dict>
+			<key>primary</key>
+			<true />
+		</dict>
 	</dict>
 </dict>
 </plist>

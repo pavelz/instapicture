@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -20,6 +20,8 @@
 		E96AF32C224F6C3D00ADD2A9 /* instapictureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96AF32B224F6C3D00ADD2A9 /* instapictureTests.swift */; };
 		E96AF337224F6C3D00ADD2A9 /* instapictureUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96AF336224F6C3D00ADD2A9 /* instapictureUITests.swift */; };
 		E9C8F6E822FD3082009A0092 /* AuthenticationServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9C8F6E722FD3082009A0092 /* AuthenticationServices.framework */; };
+		E9D795B624E5F5090020FA61 /* VideoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D795B524E5F5090020FA61 /* VideoView.swift */; };
+		E9D795B824E891650020FA61 /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D795B724E891650020FA61 /* ImageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +63,8 @@
 		E96AF338224F6C3D00ADD2A9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E9C8F6E622FD3082009A0092 /* instapicture.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = instapicture.entitlements; sourceTree = "<group>"; };
 		E9C8F6E722FD3082009A0092 /* AuthenticationServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AuthenticationServices.framework; path = System/Library/Frameworks/AuthenticationServices.framework; sourceTree = SDKROOT; };
+		E9D795B524E5F5090020FA61 /* VideoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoView.swift; sourceTree = "<group>"; };
+		E9D795B724E891650020FA61 /* ImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageView.swift; sourceTree = "<group>"; };
 		EEA2331A1CC361B558F3DE4C /* Pods_instapicture.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_instapicture.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -145,6 +149,8 @@
 				658284057999777928EC10EE /* Config.swift */,
 				658281BA5C52F97A8EA240AD /* AudioRecorder.swift */,
 				658284822F2354D8F07B0BA5 /* FeedController.swift */,
+				E9D795B724E891650020FA61 /* ImageView.swift */,
+				E9D795B524E5F5090020FA61 /* VideoView.swift */,
 			);
 			path = instapicture;
 			sourceTree = "<group>";
@@ -325,25 +331,16 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-instapicture/Pods-instapicture-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/FLKAutoLayout/FLKAutoLayout.framework",
-				"${BUILT_PRODUCTS_DIR}/Locksmith/Locksmith.framework",
-				"${BUILT_PRODUCTS_DIR}/ORStackView/ORStackView.framework",
-				"${BUILT_PRODUCTS_DIR}/SwiftHTTP/SwiftHTTP.framework",
-				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-instapicture/Pods-instapicture-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FLKAutoLayout.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Locksmith.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ORStackView.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftHTTP.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-instapicture/Pods-instapicture-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-instapicture/Pods-instapicture-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-instapicture/Pods-instapicture-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -353,7 +350,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E9D795B824E891650020FA61 /* ImageView.swift in Sources */,
 				E96AF319224F6C3C00ADD2A9 /* ViewController.swift in Sources */,
+				E9D795B624E5F5090020FA61 /* VideoView.swift in Sources */,
 				E9607951230AFD7500DF0545 /* LoginController.swift in Sources */,
 				E96AF317224F6C3C00ADD2A9 /* AppDelegate.swift in Sources */,
 				65828E9D4A9DD9B9F6457EEA /* Config.swift in Sources */,

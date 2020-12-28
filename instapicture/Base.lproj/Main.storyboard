@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES" initialViewController="Z4e-i2-Mqv">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17147" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES" initialViewController="Z4e-i2-Mqv">
     <device id="retina4_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17120"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -22,21 +23,21 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="xKI-a0-ngJ">
                                 <rect key="frame" x="20" y="21" width="88" height="90"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BMs-eT-GSV">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BMs-eT-GSV">
                                         <rect key="frame" x="0.0" y="0.0" width="76" height="30"/>
                                         <state key="normal" title="Take Photo"/>
                                         <connections>
                                             <action selector="takePhotoWithButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="m1D-cP-h5l"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a37-r3-JdF">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a37-r3-JdF">
                                         <rect key="frame" x="0.0" y="30" width="88" height="30"/>
                                         <state key="normal" title="Select Photo"/>
                                         <connections>
                                             <action selector="pickImage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="B6b-7t-Zik"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DQu-ZY-kZy">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DQu-ZY-kZy">
                                         <rect key="frame" x="0.0" y="60" width="36" height="30"/>
                                         <state key="normal" title="Send"/>
                                         <connections>
@@ -45,33 +46,33 @@
                                     </button>
                                 </subviews>
                             </stackView>
-                            <imageView contentMode="redraw" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="250" preservesSuperviewLayoutMargins="YES" translatesAutoresizingMaskIntoConstraints="NO" id="t14-O6-RCN">
-                                <rect key="frame" x="20" y="149" width="280" height="379"/>
-                                <color key="backgroundColor" red="0.82307346199999998" green="0.82307346199999998" blue="0.82307346199999998" alpha="1" colorSpace="calibratedRGB"/>
-                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rNY-vZ-7th">
+                                <rect key="frame" x="20" y="119" width="268" height="409"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="t14-O6-RCN" firstAttribute="top" secondItem="xKI-a0-ngJ" secondAttribute="bottom" constant="38" id="TC3-Sz-5ya"/>
+                            <constraint firstAttribute="bottom" secondItem="rNY-vZ-7th" secondAttribute="bottom" constant="20" symbolic="YES" id="MGo-cY-fmJ"/>
+                            <constraint firstItem="rNY-vZ-7th" firstAttribute="leading" secondItem="xKI-a0-ngJ" secondAttribute="leading" id="NwT-Wh-QnU"/>
+                            <constraint firstItem="rNY-vZ-7th" firstAttribute="top" secondItem="xKI-a0-ngJ" secondAttribute="bottom" constant="8" symbolic="YES" id="Vvz-5T-gbv"/>
+                            <constraint firstItem="xKI-a0-ngJ" firstAttribute="top" secondItem="tR2-Lu-sSF" secondAttribute="bottom" constant="21" id="YoU-Ga-JrV"/>
                             <constraint firstAttribute="trailingMargin" secondItem="xKI-a0-ngJ" secondAttribute="trailing" constant="196" id="cv3-qM-n6g"/>
-                            <constraint firstItem="t14-O6-RCN" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="4" id="ddH-CY-LDn"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="t14-O6-RCN" secondAttribute="trailing" constant="4" id="eoG-Zr-VpB"/>
+                            <constraint firstItem="rNY-vZ-7th" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" constant="-16" id="e5D-XG-kwI"/>
                             <constraint firstItem="xKI-a0-ngJ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="4" id="kg2-MX-6Wm"/>
-                            <constraint firstItem="xKI-a0-ngJ" firstAttribute="top" secondItem="tR2-Lu-sSF" secondAttribute="bottom" constant="21" id="qyh-0p-zvX"/>
-                            <constraint firstItem="69R-C1-cdx" firstAttribute="top" secondItem="t14-O6-RCN" secondAttribute="bottom" constant="20" id="zcf-hT-sIY"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="vSl-hv-eZn"/>
                     <connections>
-                        <outlet property="ImageView" destination="t14-O6-RCN" id="9ao-t9-pr2"/>
-                        <outlet property="SendImage" destination="DQu-ZY-kZy" id="Dn9-Ie-fdx"/>
+                        <outlet property="MainView" destination="8bC-Xf-vdC" id="8FW-Om-3uK"/>
+                        <outlet property="MediaView" destination="rNY-vZ-7th" id="uq8-JS-SYL"/>
                         <outlet property="selectPhoto" destination="a37-r3-JdF" id="W14-Dy-WUZ"/>
                         <outlet property="takePhoto" destination="BMs-eT-GSV" id="bhk-WM-ekc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2483" y="165"/>
+            <point key="canvasLocation" x="2482.5" y="164.78873239436621"/>
         </scene>
         <!--Login Controller-->
         <scene sceneID="Kcc-Kd-0PI">
@@ -124,7 +125,7 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocorrectionType="no" secureTextEntry="YES" textContentType="password"/>
                                             </textField>
-                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jte-xL-yqF">
+                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jte-xL-yqF">
                                                 <rect key="frame" x="0.0" y="134" width="125.5" height="30"/>
                                                 <state key="normal" title="Login"/>
                                                 <connections>
@@ -174,7 +175,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="WKd-RI-SBZ">
                                 <rect key="frame" x="20" y="20" width="280" height="61"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="28f-me-75r">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="28f-me-75r">
                                         <rect key="frame" x="0.0" y="0.0" width="137" height="61"/>
                                         <accessibility key="accessibilityConfiguration" label="Das`"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="41"/>
@@ -183,7 +184,7 @@
                                             <action selector="takePhoto:" destination="ODT-CP-pm7" eventType="touchUpInside" id="zP2-kl-iv4"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tw0-j9-ygA">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tw0-j9-ygA">
                                         <rect key="frame" x="137" y="0.0" width="143" height="61"/>
                                         <state key="normal" title="Logout"/>
                                         <connections>
@@ -193,17 +194,17 @@
                                 </subviews>
                             </stackView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="z0A-je-sIA">
-                                <rect key="frame" x="0.0" y="109" width="320" height="433"/>
+                                <rect key="frame" x="0.0" y="108" width="320" height="433"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZL0-9O-WgJ">
-                                        <rect key="frame" x="40" y="160" width="240" height="128"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZL0-9O-WgJ">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="433"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleAspectFill" ambiguous="YES" axis="vertical" distribution="fillProportionally" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Zca-Xz-yzM">
-                                                <rect key="frame" x="120" y="-1435" width="0.0" height="2997"/>
+                                            <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" distribution="fillProportionally" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Zca-Xz-yzM">
+                                                <rect key="frame" x="0.0" y="0.0" width="320" height="433"/>
                                             </stackView>
                                         </subviews>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstItem="Zca-Xz-yzM" firstAttribute="leading" secondItem="ZL0-9O-WgJ" secondAttribute="leading" id="230-f1-Pr7"/>
                                             <constraint firstItem="Zca-Xz-yzM" firstAttribute="top" secondItem="ZL0-9O-WgJ" secondAttribute="top" id="BJ9-SJ-cV7"/>
@@ -224,7 +225,7 @@
                                 <viewLayoutGuide key="frameLayoutGuide" id="xhm-ci-hW4"/>
                             </scrollView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="WKd-RI-SBZ" firstAttribute="leading" secondItem="M21-p4-PyO" secondAttribute="leading" constant="20" id="UIb-F1-ftT"/>
                             <constraint firstItem="WKd-RI-SBZ" firstAttribute="top" secondItem="Erx-wA-iDe" secondAttribute="bottom" constant="20" id="gTT-mK-GU5"/>
@@ -266,4 +267,9 @@
     <inferredMetricsTieBreakers>
         <segue reference="nfK-0O-zIH"/>
     </inferredMetricsTieBreakers>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>

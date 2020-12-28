@@ -1,32 +1,36 @@
 PODS:
-  - FLKAutoLayout (0.2.1)
   - Locksmith (4.0.0)
-  - ORStackView (3.0.1):
-    - FLKAutoLayout (~> 0.2)
+  - MarqueeLabel (4.0.2)
+  - NotificationBannerSwift (3.0.2):
+    - MarqueeLabel (~> 4.0.0)
+    - SnapKit (~> 5.0.0)
+  - SnapKit (5.0.1)
   - SwiftHTTP (3.0.1)
-  - SwiftyJSON (4.0.0)
+  - SwiftyJSON (5.0.0)
 
 DEPENDENCIES:
   - Locksmith
-  - ORStackView
+  - NotificationBannerSwift (~> 3.0.0)
   - SwiftHTTP
   - SwiftyJSON
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
-    - FLKAutoLayout
+  trunk:
     - Locksmith
-    - ORStackView
+    - MarqueeLabel
+    - NotificationBannerSwift
+    - SnapKit
     - SwiftHTTP
     - SwiftyJSON
 
 SPEC CHECKSUMS:
-  FLKAutoLayout: 9db6b30c2008d230da608e62c607b11c23b942e6
   Locksmith: e9bebbaaa4cee3c511bc358a44f843c3fe00e21f
-  ORStackView: a1bb52748cd0ae29891c140baf22ff8972fb363c
+  MarqueeLabel: f762aa681ae201f66c1d511858b171f75d83013a
+  NotificationBannerSwift: 713e20f21b6105f4a36a00e5d9fa414a930d3d8e
+  SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
   SwiftHTTP: e94f1aa8cde58637dcc0100f6349de31a3337fde
-  SwiftyJSON: 070dabdcb1beb81b247c65ffa3a79dbbfb3b48aa
+  SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
 
-PODFILE CHECKSUM: 4ae892fc534f8df399d6ba02e83868ff5a4520a9
+PODFILE CHECKSUM: 8b4c38d50bf1143968534b9b5ab3dfe86df6fba7
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.9.3

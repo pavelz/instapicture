@@ -10,7 +10,7 @@ import UIKit
 import SwiftHTTP
 import Locksmith
 
-class RailsResponse: Codable{
+class RailsResponse: Codable {
     var email: String
     var authentication_token: String
 }
@@ -73,7 +73,7 @@ class LoginController: UIViewController, UITextFieldDelegate, UINavigationContro
                     print("RESPONSE: ")
                     print(response.data)
                     let data = try! decoder.decode(RailsResponse.self, from: response.data)
-                    print(data.authentication_token)
+                    print(data.authentication_token)`
                     print("TOKEN")
 //                    if locker?["token"] != nil {
 //                        DispatchQueue.main.async {

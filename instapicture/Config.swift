@@ -16,6 +16,7 @@ class Config {
             print("######## SERVER URL is already set \(url)")
             return url
         }
+
         // figure out one of valid urls to work with.
         // TODO there is an issue with tokens being invalidated if url is different.
 
