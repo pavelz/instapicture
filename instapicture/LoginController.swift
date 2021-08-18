@@ -46,10 +46,29 @@ class LoginController: UIViewController, UITextFieldDelegate, UINavigationContro
         return true
     }
 
+    func createSpinnerView() {
+        let child = SpinnerViewController()
+
+        // add the spinner view controller
+        addChild(child)
+        child.view.frame = view.frame
+        view.addSubview(child.view)
+        child.didMove(toParent: self)
+
+        // wait two seconds to simulate some work happening
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            // then remove the spinner view controller
+            child.willMove(toParent: nil)
+            child.view.removeFromSuperview()
+            child.removeFromParent()
+        }
+    }
+
     @IBAction func LogIn(){
         print("Login already")
         print(Username.text ?? "")
         print(Password.text ?? "")
+        createSpinnerView()
 
         // http://kek.arslogi.ca:3001/users/sign_in
         let parameters: [String:Any] = [
@@ -73,7 +92,7 @@ class LoginController: UIViewController, UITextFieldDelegate, UINavigationContro
                     print("RESPONSE: ")
                     print(response.data)
                     let data = try! decoder.decode(RailsResponse.self, from: response.data)
-                    print(data.authentication_token)`
+                    print(data.authentication_token);
                     print("TOKEN")
 //                    if locker?["token"] != nil {
 //                        DispatchQueue.main.async {

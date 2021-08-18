@@ -38,7 +38,7 @@ class Config {
                         if var uc = URLComponents(string: str + "/alive") {
                             guard let a_url = uc.url else {
                                 return
-                            }
+                             }
 
                             //dataTask?.cancel()
                             dataTask = s.dataTask(with: a_url) {  data, response, error in

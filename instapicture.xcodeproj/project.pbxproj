@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		6582800B1A1A4FA3E4FDFA08 /* FeedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658284822F2354D8F07B0BA5 /* FeedController.swift */; };
 		65828575F7EDC9FB99688EFE /* AudioRecorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658281BA5C52F97A8EA240AD /* AudioRecorder.swift */; };
+		65828C9B4E1942E6D9EFDB7E /* SpinnerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658281D8716FBAB3F82EA06C /* SpinnerViewController.swift */; };
 		65828E9D4A9DD9B9F6457EEA /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658284057999777928EC10EE /* Config.swift */; };
 		AB3FD8F06A17EBCAD7580022 /* Pods_instapicture.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EEA2331A1CC361B558F3DE4C /* Pods_instapicture.framework */; };
 		E9607951230AFD7500DF0545 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9607950230AFD7500DF0545 /* LoginController.swift */; };
@@ -45,6 +46,7 @@
 		29C2DF6FC43812B5FF279D57 /* Pods-instapicture.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-instapicture.release.xcconfig"; path = "Pods/Target Support Files/Pods-instapicture/Pods-instapicture.release.xcconfig"; sourceTree = "<group>"; };
 		4627FDB58A2EFD54B66C2B61 /* Pods-instapicture.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-instapicture.debug.xcconfig"; path = "Pods/Target Support Files/Pods-instapicture/Pods-instapicture.debug.xcconfig"; sourceTree = "<group>"; };
 		658281BA5C52F97A8EA240AD /* AudioRecorder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioRecorder.swift; sourceTree = "<group>"; };
+		658281D8716FBAB3F82EA06C /* SpinnerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpinnerViewController.swift; sourceTree = "<group>"; };
 		658284057999777928EC10EE /* Config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		658284822F2354D8F07B0BA5 /* FeedController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedController.swift; sourceTree = "<group>"; };
 		E9607950230AFD7500DF0545 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
@@ -151,6 +153,7 @@
 				658284822F2354D8F07B0BA5 /* FeedController.swift */,
 				E9D795B724E891650020FA61 /* ImageView.swift */,
 				E9D795B524E5F5090020FA61 /* VideoView.swift */,
+				658281D8716FBAB3F82EA06C /* SpinnerViewController.swift */,
 			);
 			path = instapicture;
 			sourceTree = "<group>";
@@ -358,6 +361,7 @@
 				65828E9D4A9DD9B9F6457EEA /* Config.swift in Sources */,
 				65828575F7EDC9FB99688EFE /* AudioRecorder.swift in Sources */,
 				6582800B1A1A4FA3E4FDFA08 /* FeedController.swift in Sources */,
+				65828C9B4E1942E6D9EFDB7E /* SpinnerViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -463,7 +467,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -518,7 +522,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -669,7 +673,7 @@
 				E96AF33A224F6C3D00ADD2A9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		E96AF33B224F6C3D00ADD2A9 /* Build configuration list for PBXNativeTarget "instapicture" */ = {
 			isa = XCConfigurationList;
@@ -678,7 +682,7 @@
 				E96AF33D224F6C3D00ADD2A9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		E96AF33E224F6C3D00ADD2A9 /* Build configuration list for PBXNativeTarget "instapictureTests" */ = {
 			isa = XCConfigurationList;
@@ -687,7 +691,7 @@
 				E96AF340224F6C3D00ADD2A9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		E96AF341224F6C3D00ADD2A9 /* Build configuration list for PBXNativeTarget "instapictureUITests" */ = {
 			isa = XCConfigurationList;
@@ -696,7 +700,7 @@
 				E96AF343224F6C3D00ADD2A9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 /* End XCConfigurationList section */
 	};
