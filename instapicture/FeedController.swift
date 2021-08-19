@@ -50,6 +50,7 @@ class FeedController: UIViewController, UINavigationControllerDelegate {
     @objc func tapTap(sender: UITapGestureRecognizer){
         print("\(sender.view!.frame)")
     }
+
     // TODO can probably incrementally load views
     func loadFeed(){
         let locker = Locksmith.loadDataForUserAccount(userAccount: "account")
@@ -93,76 +94,8 @@ class FeedController: UIViewController, UINavigationControllerDelegate {
                         print("💩 what kind of view is that? \(bit)")
                     }
 
-//                    HTTP.GET(Config.serverURL() +  image_url){ response in
-//                            DispatchQueue.main.async {
-//                                
-//                                let image = UIImage(data: response.data)
-//                                height += Int(image?.size.height ?? 0) + 60 // 40 - spacing set above
-//                                
-//                                let view = ImageView()
-//                                
-//                                view.image = image
-//                                if image?.size.width ?? 0 > image?.size.height ?? 0 {
-//                                    view.contentMode = .scaleAspectFit                            //since the width > height we may fit it and we'll have bands on top/bottom
-//                                } else {
-//                                    view.contentMode = .scaleAspectFill
-//                                    //width < height we fill it until width is taken up and clipped on top/bottom
-//                                }
-//                                view.frame.size = CGSize(width: image?.size.width ?? 0, height: image?.size.height ?? 0)
-//                                self.Images.addArrangedSubview(view)
-//                            }
-//                            
-//                    }
-                    
-//                    if(bit.className == "Video"){
-//                        DispatchQueue.main.async {
-//
-//                            // display screenshot.
-//                            // 1 move all this code into video view
-//                            // 2 move code above for photos in to photo view
-//
-//                            let screenshot = UIImage()
-//
-//                            HTTP.GET(Config.serverURL() +  bit.screenshot){ response in
-//
-//                            }
-//
-//                            let player = AVPlayer(url: URL(string: "https://arslogi.ca" + bit.url)!)
-//                            let view = VideoView(url: bit.url, screenshot: bit.screenshot)
-//                            view.player = player
-//                            //view.playerLayer.videoGravity = .resizeAspect
-//
-//                            //                        let playerLayer = AVPlayerLayer(player: player)
-//                            //                        view.playerLayer.frame.size = CGSize(width: 300, height: 200)
-//
-//                            //view.frame.size = CGSize(width: 200, height: 100)
-//                            //                        view.frame.origin = .zero
-//                            //                        view.playerLayer = playerLayer
-//
-//                            //                        playerLayer.needsDisplayOnBoundsChange = true
-//                            //view.layer.addSublayer(playerLayer)
-//
-//                            self.Images.addArrangedSubview(view)
-//
-//                            player.seek(to: CMTime(seconds: 0.1, preferredTimescale: 500))
-//                            view.leftAnchor.constraint(equalTo: self.Images.leftAnchor).isActive = true
-//                            view.rightAnchor.constraint(equalTo: self.Images.rightAnchor).isActive = true
-//                            //                        view.topAnchor.constraint(equalTo: self.Images.topAnchor).isActive = true
-//                            let videoRect = view.playerLayer.videoRect
-//                            print("🍔 NATURAL SIZE \(player.currentItem?.asset.tracks(withMediaType: .video)[0].naturalSize)")
-//                            view.heightAnchor.constraint(equalToConstant: (player.currentItem?.asset.tracks(withMediaType: .video)[0].naturalSize.height)!).isActive = true // This is a sync action that is SLOW - all videos must be pre-loaded before getting sizing info.
-//
-//
-//                            var playerItemContext = 0
-//                            player.currentItem?.addObserver(view, forKeyPath: #keyPath(AVPlayerItem.status), options: [.initial,.prior, .old,.new], context: &playerItemContext)
-//                            //                        player.play()
-//
-//                        }
-//                    }
-                    
                 }
                 
-                //self.Scroller.contentSize = CGSize(width: 400, height: height)
                 print("height: \(height)")
                 
                 self.refreshControl.endRefreshing()

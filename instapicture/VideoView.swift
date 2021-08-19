@@ -13,12 +13,6 @@ import SwiftHTTP
 
 
 class VideoView: UIView {
-//    var playerLayer: CALayer?
-//
-//    override func layoutSublayers(of: CALayer) {
-//        super.layoutSublayers(of: of)
-//        self.layer.frame = self.bounds
-//    }
     var url:String = ""
     var screenshot:String?
     var screenshotView:UIImageView?
@@ -142,13 +136,8 @@ class VideoView: UIView {
     override func layoutSubviews() {
         print("layout subviews \(playerLayer.frame) \(self.frame) \(playerLayer.videoRect)")
         super.layoutSubviews()
-//        let f = playerLayer.preferredFrameSize()
-//        print("pref frame size: \(f)    ")
-//        self.frame = playerLayer.frame
-        
-        // load image
-        
     }
+
     // Override UIView propertyz
     override static var layerClass: AnyClass {
         return AVPlayerLayer.self

@@ -194,16 +194,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
                 view.playerLayer.videoGravity = .resizeAspect
                 view.frame = MainView.frame
 
-                //ImageView.removeFromSuperview()
-//                view.backgroundColor = .red
                 MediaView.addSubview(view)
 
-//                view.leftAnchor.constraint(equalTo: self.MediaView.leftAnchor).isActive = true
-//                view.rightAnchor.constraint(equalTo: self.MediaView.rightAnchor).isActive = true
-//                view.top  Anchor.constraint(equalTo: self.MediaView.topAnchor).isActive = true
-//                view.heightAnchor.constraint(equalToConstant: 250).isActive = true
-                
-//              ViewController.copyConstraints(fromView: ImageView, toView: view)
                 // TODO convert to mp4
                 
                 upload_url = "/videos"
@@ -219,8 +211,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
                 upload_mime = "video/mp4"
                 
                 view.player!.play()
-//                MainView.setNeedsDisplay()
-//                MainView.setNeedsLayout()
             }
             
         }
@@ -317,8 +307,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         
         let documentsDirectory = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
         let myDocumentPath = NSURL(fileURLWithPath: documentsDirectory).appendingPathComponent("temp.mp4")?.absoluteString
-//        let url = NSURL(fileURLWithPath: myDocumentPath ?? String(""))
-        
+
         let documentsDirectory2 = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0] as NSURL
         
         let filePath = documentsDirectory2.appendingPathComponent("rendered-Video.mp4")
@@ -334,8 +323,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             }
         }
         
-//        url
-        
+
         exportSession!.outputURL = filePath
         exportSession!.outputFileType = AVFileType.mp4
         exportSession!.shouldOptimizeForNetworkUse = true
