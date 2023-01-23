@@ -39,7 +39,7 @@
 	<string>Videos as well</string>
 	<key>ServerConfig</key>
 	<array>
-		<string>http://192.168.5.86:3001</string>
+		<string>http://192.168.1.8:3001</string>
 		<string>https://arslogi.ca</string>
 	</array>
 	<key>UILaunchStoryboardName</key>

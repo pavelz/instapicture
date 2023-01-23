@@ -143,4 +143,3 @@ class VideoView: UIView {
         return AVPlayerLayer.self
     }
 }
-
