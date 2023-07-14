@@ -139,8 +139,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             picker.delegate = self
             picker.allowsEditing = true
             picker.sourceType = source
-            picker.mediaTypes = [kUTTypeMovie as String,kUTTypeImage as String]    //UIImagePickerController.availableMediaTypes(for: .camera)!
-            picker.cameraCaptureMode = .video
+            picker.mediaTypes = [UTType.movie.identifier,UTType.image.identifier]    //UIImagePickerController.availableMediaTypes(for: .camera)!
+            picker.cameraCaptureMode = .photo
 
             picker.videoMaximumDuration = 4
             

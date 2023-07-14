@@ -51,7 +51,7 @@ class Config {
                                 }else if let data = data, let response = response as? HTTPURLResponse,
                                          response.statusCode == 200 {
                                     if(url == "") {
-                                        print("Seting URL to : \(str)")
+                                        print("Setting URL to : \(str)")
 
                                         url = str
 
