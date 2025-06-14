@@ -1,4 +1,4 @@
-platform :ios, '12.0'
+platform :ios, '16.2'
 use_frameworks!
 
 target 'instapicture' do
