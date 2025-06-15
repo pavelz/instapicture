@@ -3,15 +3,15 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4B249C9C95D32A83D1FFB610 /* Pods_instapicture.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FE026A31B20BEE911B3F32E /* Pods_instapicture.framework */; };
 		6582800B1A1A4FA3E4FDFA08 /* FeedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658284822F2354D8F07B0BA5 /* FeedController.swift */; };
 		65828575F7EDC9FB99688EFE /* AudioRecorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658281BA5C52F97A8EA240AD /* AudioRecorder.swift */; };
 		65828C9B4E1942E6D9EFDB7E /* SpinnerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658281D8716FBAB3F82EA06C /* SpinnerViewController.swift */; };
 		65828E9D4A9DD9B9F6457EEA /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658284057999777928EC10EE /* Config.swift */; };
-		AB3FD8F06A17EBCAD7580022 /* Pods_instapicture.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EEA2331A1CC361B558F3DE4C /* Pods_instapicture.framework */; };
 		E9607951230AFD7500DF0545 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9607950230AFD7500DF0545 /* LoginController.swift */; };
 		E96AF317224F6C3C00ADD2A9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96AF316224F6C3C00ADD2A9 /* AppDelegate.swift */; };
 		E96AF319224F6C3C00ADD2A9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96AF318224F6C3C00ADD2A9 /* ViewController.swift */; };
@@ -43,12 +43,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		29C2DF6FC43812B5FF279D57 /* Pods-instapicture.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-instapicture.release.xcconfig"; path = "Pods/Target Support Files/Pods-instapicture/Pods-instapicture.release.xcconfig"; sourceTree = "<group>"; };
-		4627FDB58A2EFD54B66C2B61 /* Pods-instapicture.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-instapicture.debug.xcconfig"; path = "Pods/Target Support Files/Pods-instapicture/Pods-instapicture.debug.xcconfig"; sourceTree = "<group>"; };
+		4FE026A31B20BEE911B3F32E /* Pods_instapicture.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_instapicture.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		658281BA5C52F97A8EA240AD /* AudioRecorder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioRecorder.swift; sourceTree = "<group>"; };
 		658281D8716FBAB3F82EA06C /* SpinnerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpinnerViewController.swift; sourceTree = "<group>"; };
 		658284057999777928EC10EE /* Config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		658284822F2354D8F07B0BA5 /* FeedController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedController.swift; sourceTree = "<group>"; };
+		8107DC5743BFC4BD71813073 /* Pods-instapicture.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-instapicture.debug.xcconfig"; path = "Target Support Files/Pods-instapicture/Pods-instapicture.debug.xcconfig"; sourceTree = "<group>"; };
 		E9607950230AFD7500DF0545 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		E96AF313224F6C3C00ADD2A9 /* instapicture.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = instapicture.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E96AF316224F6C3C00ADD2A9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -67,7 +67,7 @@
 		E9C8F6E722FD3082009A0092 /* AuthenticationServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AuthenticationServices.framework; path = System/Library/Frameworks/AuthenticationServices.framework; sourceTree = SDKROOT; };
 		E9D795B524E5F5090020FA61 /* VideoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoView.swift; sourceTree = "<group>"; };
 		E9D795B724E891650020FA61 /* ImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageView.swift; sourceTree = "<group>"; };
-		EEA2331A1CC361B558F3DE4C /* Pods_instapicture.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_instapicture.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FCE1AAB84C7220408B6793D1 /* Pods-instapicture.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-instapicture.release.xcconfig"; path = "Target Support Files/Pods-instapicture/Pods-instapicture.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,7 +76,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E9C8F6E822FD3082009A0092 /* AuthenticationServices.framework in Frameworks */,
-				AB3FD8F06A17EBCAD7580022 /* Pods_instapicture.framework in Frameworks */,
+				4B249C9C95D32A83D1FFB610 /* Pods_instapicture.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -97,20 +97,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		D640AFA03F525C35067DA0DA /* Pods */ = {
+		BCE9E2E78C01F5C968127A5A /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				4627FDB58A2EFD54B66C2B61 /* Pods-instapicture.debug.xcconfig */,
-				29C2DF6FC43812B5FF279D57 /* Pods-instapicture.release.xcconfig */,
+				8107DC5743BFC4BD71813073 /* Pods-instapicture.debug.xcconfig */,
+				FCE1AAB84C7220408B6793D1 /* Pods-instapicture.release.xcconfig */,
 			);
-			name = Pods;
+			path = Pods;
 			sourceTree = "<group>";
 		};
 		DF6DA79EAD11ED1FF79EE8C1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				E9C8F6E722FD3082009A0092 /* AuthenticationServices.framework */,
-				EEA2331A1CC361B558F3DE4C /* Pods_instapicture.framework */,
+				4FE026A31B20BEE911B3F32E /* Pods_instapicture.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -122,8 +122,8 @@
 				E96AF32A224F6C3D00ADD2A9 /* instapictureTests */,
 				E96AF335224F6C3D00ADD2A9 /* instapictureUITests */,
 				E96AF314224F6C3C00ADD2A9 /* Products */,
-				D640AFA03F525C35067DA0DA /* Pods */,
 				DF6DA79EAD11ED1FF79EE8C1 /* Frameworks */,
+				BCE9E2E78C01F5C968127A5A /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -183,11 +183,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E96AF33B224F6C3D00ADD2A9 /* Build configuration list for PBXNativeTarget "instapicture" */;
 			buildPhases = (
-				901A8ED0AB934E6FC0C755E3 /* [CP] Check Pods Manifest.lock */,
+				8552AF557F18C495C35A1678 /* [CP] Check Pods Manifest.lock */,
 				E96AF30F224F6C3C00ADD2A9 /* Sources */,
 				E96AF310224F6C3C00ADD2A9 /* Frameworks */,
 				E96AF311224F6C3C00ADD2A9 /* Resources */,
-				F3A906B50F1ACF31D3018B1E /* [CP] Embed Pods Frameworks */,
+				ADE8DAC037A9F336AB1B7E8E /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -311,16 +311,20 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		901A8ED0AB934E6FC0C755E3 /* [CP] Check Pods Manifest.lock */ = {
+		8552AF557F18C495C35A1678 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			inputFileListPaths = (
 			);
 			inputPaths = (
 				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
 				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-instapicture-checkManifestLockResult.txt",
 			);
@@ -329,7 +333,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		F3A906B50F1ACF31D3018B1E /* [CP] Embed Pods Frameworks */ = {
+		ADE8DAC037A9F336AB1B7E8E /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -337,9 +341,13 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-instapicture/Pods-instapicture-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
+			inputPaths = (
+			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-instapicture/Pods-instapicture-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -534,7 +542,7 @@
 		};
 		E96AF33C224F6C3D00ADD2A9 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4627FDB58A2EFD54B66C2B61 /* Pods-instapicture.debug.xcconfig */;
+			baseConfigurationReference = 8107DC5743BFC4BD71813073 /* Pods-instapicture.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -543,7 +551,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = S95Q96986P;
 				INFOPLIST_FILE = instapicture/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -559,7 +567,7 @@
 		};
 		E96AF33D224F6C3D00ADD2A9 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 29C2DF6FC43812B5FF279D57 /* Pods-instapicture.release.xcconfig */;
+			baseConfigurationReference = FCE1AAB84C7220408B6793D1 /* Pods-instapicture.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -568,7 +576,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = S95Q96986P;
 				INFOPLIST_FILE = instapicture/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -589,6 +597,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = S95Q96986P;
 				INFOPLIST_FILE = instapictureTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -610,6 +619,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = S95Q96986P;
 				INFOPLIST_FILE = instapictureTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -630,6 +640,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = S95Q96986P;
 				INFOPLIST_FILE = instapictureUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -650,6 +661,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = S95Q96986P;
 				INFOPLIST_FILE = instapictureUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

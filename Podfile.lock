@@ -1,12 +1,12 @@
 PODS:
   - Locksmith (4.0.0)
-  - MarqueeLabel (4.0.2)
-  - NotificationBannerSwift (3.0.2):
-    - MarqueeLabel (~> 4.0.0)
-    - SnapKit (~> 5.0.0)
+  - MarqueeLabel (4.0.5)
+  - NotificationBannerSwift (3.0.6):
+    - MarqueeLabel (~> 4.0.5)
+    - SnapKit (~> 5.0.1)
   - SnapKit (5.0.1)
   - SwiftHTTP (3.0.1)
-  - SwiftyJSON (5.0.0)
+  - SwiftyJSON (5.0.1)
 
 DEPENDENCIES:
   - Locksmith
@@ -25,12 +25,12 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   Locksmith: e9bebbaaa4cee3c511bc358a44f843c3fe00e21f
-  MarqueeLabel: f762aa681ae201f66c1d511858b171f75d83013a
-  NotificationBannerSwift: 713e20f21b6105f4a36a00e5d9fa414a930d3d8e
+  MarqueeLabel: 00cc0bcd087111dca575878b3531af980559707d
+  NotificationBannerSwift: 7021be2338f8f29cf424b0aca43da462bf9e2a1a
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
   SwiftHTTP: e94f1aa8cde58637dcc0100f6349de31a3337fde
-  SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
+  SwiftyJSON: 2f33a42c6fbc52764d96f13368585094bfd8aa5e
 
-PODFILE CHECKSUM: 8b4c38d50bf1143968534b9b5ab3dfe86df6fba7
+PODFILE CHECKSUM: e97090428c4041ee81eb718769241c8c2d456745
 
-COCOAPODS: 1.11.3
+COCOAPODS: 1.16.2

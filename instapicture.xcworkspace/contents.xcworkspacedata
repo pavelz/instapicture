@@ -7,4 +7,39 @@
    <FileRef
       location = "group:Pods/Pods.xcodeproj">
    </FileRef>
+   <Group
+      location = "group:"
+      name = "Targets Support Files">
+      <Group
+         location = "group:Pods/Target Support Files/Pods-instapicture"
+         name = "Pods-instapicture">
+         <FileRef
+            location = "group:Pods-instapicture.modulemap">
+         </FileRef>
+         <FileRef
+            location = "group:Pods-instapicture-acknowledgements.markdown">
+         </FileRef>
+         <FileRef
+            location = "group:Pods-instapicture-acknowledgements.plist">
+         </FileRef>
+         <FileRef
+            location = "group:Pods-instapicture-dummy.m">
+         </FileRef>
+         <FileRef
+            location = "group:Pods-instapicture-frameworks.sh">
+         </FileRef>
+         <FileRef
+            location = "group:Pods-instapicture-Info.plist">
+         </FileRef>
+         <FileRef
+            location = "group:Pods-instapicture-umbrella.h">
+         </FileRef>
+         <FileRef
+            location = "group:Pods-instapicture.debug.xcconfig">
+         </FileRef>
+         <FileRef
+            location = "group:Pods-instapicture.release.xcconfig">
+         </FileRef>
+      </Group>
+   </Group>
 </Workspace>
