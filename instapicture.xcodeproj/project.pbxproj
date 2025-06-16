@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 54;
+	objectVersion = 70;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -70,6 +70,34 @@
 		FCE1AAB84C7220408B6793D1 /* Pods-instapicture.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-instapicture.release.xcconfig"; path = "Target Support Files/Pods-instapicture/Pods-instapicture.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		E91769322E0098120026D814 /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				LaunchImage.png,
+			);
+			target = E96AF312224F6C3C00ADD2A9 /* instapicture */;
+		};
+		E91769332E0098120026D814 /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				LaunchImage.png,
+			);
+			target = E96AF326224F6C3D00ADD2A9 /* instapictureTests */;
+		};
+		E91769342E0098120026D814 /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				LaunchImage.png,
+			);
+			target = E96AF331224F6C3D00ADD2A9 /* instapictureUITests */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		E917692D2E0098020026D814 /* Images */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (E91769322E0098120026D814 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, E91769332E0098120026D814 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, E91769342E0098120026D814 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = Images; sourceTree = "<group>"; };
+/* End PBXFileSystemSynchronizedRootGroup section */
+
 /* Begin PBXFrameworksBuildPhase section */
 		E96AF310224F6C3C00ADD2A9 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
@@ -118,6 +146,7 @@
 		E96AF30A224F6C3B00ADD2A9 = {
 			isa = PBXGroup;
 			children = (
+				E917692D2E0098020026D814 /* Images */,
 				E96AF315224F6C3C00ADD2A9 /* instapicture */,
 				E96AF32A224F6C3D00ADD2A9 /* instapictureTests */,
 				E96AF335224F6C3D00ADD2A9 /* instapictureUITests */,
