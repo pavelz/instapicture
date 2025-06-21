@@ -216,18 +216,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         picker.dismiss(animated: true, completion: nil)
 
     }
-    static func copyConstraints(fromView sourceView: UIView, toView destView: UIView) {
-        guard let sourceViewSuperview = sourceView.superview else {
-            return
-        }
-        for constraint in sourceViewSuperview.constraints {
-            if constraint.firstItem as? UIView == sourceView {
-                sourceViewSuperview.addConstraint(NSLayoutConstraint(item: destView, attribute: constraint.firstAttribute, relatedBy: constraint.relation, toItem: constraint.secondItem, attribute: constraint.secondAttribute, multiplier: constraint.multiplier, constant: constraint.constant))
-            } else if constraint.secondItem as? UIView == sourceView {
-                sourceViewSuperview.addConstraint(NSLayoutConstraint(item: constraint.firstItem, attribute: constraint.firstAttribute, relatedBy: constraint.relation, toItem: destView, attribute: constraint.secondAttribute, multiplier: constraint.multiplier, constant: constraint.constant))
-            }
-        }
-    }
     
     @IBAction func SendImage(button: UIButton){
         
