@@ -21,22 +21,14 @@ class LoginController: UIViewController, UITextFieldDelegate, UINavigationContro
     @IBOutlet weak var Login: UIButton!
 
     @IBOutlet weak var Password: UITextField!
+    
     override func viewDidLoad() {
         self.Password.delegate = self
         super.viewDidLoad()
 
         let serverUrl = Config.serverURL()
-
-//        let locker = Locksmith.loadDataForUserAccount(userAccount: "account")
-//        print("TOKEN")
-//        if locker?["token"] != nil {
-//            DispatchQueue.main.async {
-//                self.performSegue(withIdentifier: "go", sender: nil)
-//            }
-//        }
-
-        // Do any additional setup after loading the view.
     }
+    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if textField == Password {
             textField.resignFirstResponder()
@@ -94,11 +86,6 @@ class LoginController: UIViewController, UITextFieldDelegate, UINavigationContro
                     let data = try! decoder.decode(RailsResponse.self, from: response.data)
                     print(data.authentication_token);
                     print("TOKEN")
-//                    if locker?["token"] != nil {
-//                        DispatchQueue.main.async {
-//                            self.performSegue(withIdentifier: "go", sender: nil)
-//                        }
-//                    }
 
                     DispatchQueue.main.async {
                         do {
@@ -122,14 +109,3 @@ class LoginController: UIViewController, UITextFieldDelegate, UINavigationContro
 
     }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
-}

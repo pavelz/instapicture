@@ -74,21 +74,21 @@
 		E91769322E0098120026D814 /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
-				LaunchImage.png,
+				Waka.png,
 			);
 			target = E96AF312224F6C3C00ADD2A9 /* instapicture */;
 		};
 		E91769332E0098120026D814 /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
-				LaunchImage.png,
+				Waka.png,
 			);
 			target = E96AF326224F6C3D00ADD2A9 /* instapictureTests */;
 		};
 		E91769342E0098120026D814 /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
-				LaunchImage.png,
+				Waka.png,
 			);
 			target = E96AF331224F6C3D00ADD2A9 /* instapictureUITests */;
 		};
