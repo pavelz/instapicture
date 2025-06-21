@@ -191,7 +191,7 @@
                                 </subviews>
                             </stackView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="z0A-je-sIA">
-                                <rect key="frame" x="0.0" y="163" width="430" height="683"/>
+                                <rect key="frame" x="0.0" y="163" width="430" height="682"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZL0-9O-WgJ">
@@ -262,6 +262,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="5YM-wa-ALa"/>
         <segue reference="nfK-0O-zIH"/>
     </inferredMetricsTieBreakers>
     <resources>

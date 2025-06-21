@@ -16,16 +16,16 @@ class RailsResponse: Codable {
 }
 
 class LoginController: UIViewController, UITextFieldDelegate, UINavigationControllerDelegate {
-
+    
     @IBOutlet weak var Username: UITextField!
     @IBOutlet weak var Login: UIButton!
-
+    
     @IBOutlet weak var Password: UITextField!
     
     override func viewDidLoad() {
         self.Password.delegate = self
         super.viewDidLoad()
-
+        
         let serverUrl = Config.serverURL()
     }
     
@@ -37,16 +37,16 @@ class LoginController: UIViewController, UITextFieldDelegate, UINavigationContro
         }
         return true
     }
-
+    
     func createSpinnerView() {
         let child = SpinnerViewController()
-
+        
         // add the spinner view controller
         addChild(child)
         child.view.frame = view.frame
         view.addSubview(child.view)
         child.didMove(toParent: self)
-
+        
         // wait two seconds to simulate some work happening
         DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
             // then remove the spinner view controller
@@ -55,57 +55,58 @@ class LoginController: UIViewController, UITextFieldDelegate, UINavigationContro
             child.removeFromParent()
         }
     }
-
+    
     @IBAction func LogIn(){
         print("Login already")
         print(Username.text ?? "")
         print(Password.text ?? "")
         createSpinnerView()
-
+        
         // http://kek.arslogi.ca:3001/users/sign_in
         let parameters: [String:Any] = [
             "user": [
-            "email": Username.text ?? "",
-            "password": Password.text ?? ""
+                "email": Username.text ?? "",
+                "password": Password.text ?? ""
             ]
         ]
-
+        
         HTTP.POST(
-                Config.serverURL() + "/users/sign_in",
-                parameters: parameters,
-                headers: ["ContentType":"application/json", "Accept":"application/json"],
-                requestSerializer: JSONParameterSerializer()
+            Config.serverURL() + "/users/sign_in",
+            parameters: parameters,
+            headers: ["ContentType":"application/json", "Accept":"application/json"],
+            requestSerializer: JSONParameterSerializer()
         ) { response in
-                if let err = response.error {
-                    print("Error: \(err.localizedDescription)")
-                    return
-                }
-                let decoder = JSONDecoder()
-                    print("RESPONSE: ")
-                    print(response.data)
-                    let data = try! decoder.decode(RailsResponse.self, from: response.data)
-                    print(data.authentication_token);
-                    print("TOKEN")
-
-                    DispatchQueue.main.async {
-                        do {
-                            let locker = Locksmith.loadDataForUserAccount(userAccount: "account")
-                            print(locker)
-                            if locker?["email"] != nil {
-                                print("Update login info")
-                                try Locksmith.updateData(data: ["token": data.authentication_token,"email": self.Username.text ?? ""], forUserAccount: "account")
-                            } else {
-                                print("New login info")
-                                try Locksmith.saveData(data: ["token": data.authentication_token, "email": self.Username.text ?? ""], forUserAccount: "account")
-                            }
-
-                        } catch {
-                            print("ERROR saving a token")
-                        }
-                        self.performSegue(withIdentifier: "go", sender: nil)
-                    }
-                print("posted login info!")
+            if let err = response.error {
+                print("Error: \(err.localizedDescription)")
+                return
             }
-
+            let decoder = JSONDecoder()
+            print("RESPONSE: ")
+            print(response.data)
+            let data = try! decoder.decode(RailsResponse.self, from: response.data)
+            print(data.authentication_token);
+            print("TOKEN")
+            
+            DispatchQueue.main.async {
+                do {
+                    let locker = Locksmith.loadDataForUserAccount(userAccount: "account")
+                    print(locker)
+                    if locker?["email"] != nil {
+                        print("Update login info")
+                        try Locksmith.updateData(data: ["token": data.authentication_token,"email": self.Username.text ?? ""], forUserAccount: "account")
+                    } else {
+                        print("New login info")
+                        try Locksmith.saveData(data: ["token": data.authentication_token, "email": self.Username.text ?? ""], forUserAccount: "account")
+                    }
+                    
+                } catch {
+                    print("ERROR saving a token")
+                }
+                self.performSegue(withIdentifier: "go", sender: nil)
+            }
+            print("posted login info!")
+        }
+        
     }
-
+    
+}

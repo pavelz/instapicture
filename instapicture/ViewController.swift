@@ -228,22 +228,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             }
         }
     }
-    func scheduleNotification() {
-        let center = UNUserNotificationCenter.current()
-        
-        let content = UNMutableNotificationContent()
-        content.title = "Late wake up call"
-        content.body = "The early bird catches the worm, but the second mouse gets the cheese."
-        content.badge = 1
-        content.sound = UNNotificationSound.default
-        
-        
-        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5.0, repeats: false)
-        print("triggering")
-        let request = UNNotificationRequest(identifier: "notification", content: content, trigger: trigger)
-        center.add(request,withCompletionHandler: nil)
-        print("triggered")
-    }
     
     @IBAction func SendImage(button: UIButton){
         
