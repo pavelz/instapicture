@@ -259,7 +259,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
                 return  
             } else {					                print("\(response.description)")
                 print("\(response.data)")
-                popup("Photo pploaded.")
+                popup("Photo uploaded.")
             }
         }
     }
