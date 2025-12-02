@@ -7,7 +7,7 @@ import Foundation
 import AVFoundation
 
 class AudioRecorder {
-    func AudioRecorder(vc: ViewController){
+    func AudioRecorder(vc: ChooserController){
         let recordingSession:AVAudioSession! = AVAudioSession.sharedInstance()
 
         do {

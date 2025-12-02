@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23727" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES" initialViewController="Z4e-i2-Mqv">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="24412" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES" initialViewController="Z4e-i2-Mqv">
     <device id="retina6_7" orientation="portrait" appearance="dark"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23721"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="24405"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Chooser Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="instapicture" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ChooserController" customModule="instapicture" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="tR2-Lu-sSF"/>
                         <viewControllerLayoutGuide type="bottom" id="69R-C1-cdx"/>
@@ -82,7 +82,7 @@
                         <viewControllerLayoutGuide type="bottom" id="sNc-MV-8p8"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="osz-gb-yf0">
-                        <rect key="frame" x="0.0" y="0.0" width="430" height="863"/>
+                        <rect key="frame" x="0.0" y="0.0" width="430" height="873"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="79" translatesAutoresizingMaskIntoConstraints="NO" id="khC-vN-QPe">
@@ -191,14 +191,14 @@
                                 </subviews>
                             </stackView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="z0A-je-sIA">
-                                <rect key="frame" x="0.0" y="163" width="430" height="682"/>
+                                <rect key="frame" x="0.0" y="163" width="430" height="681"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZL0-9O-WgJ">
-                                        <rect key="frame" x="0.0" y="0.0" width="430" height="682.66666666666663"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="430" height="681.66666666666663"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" distribution="fillProportionally" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Zca-Xz-yzM">
-                                                <rect key="frame" x="0.0" y="0.0" width="430" height="682.66666666666663"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="430" height="681.66666666666663"/>
                                                 <color key="backgroundColor" systemColor="viewFlipsideBackgroundColor"/>
                                             </stackView>
                                         </subviews>
@@ -248,7 +248,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Z4e-i2-Mqv" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="hRR-Ip-cam">
-                        <rect key="frame" x="0.0" y="118" width="430" height="44"/>
+                        <rect key="frame" x="0.0" y="118" width="430" height="54"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -262,7 +262,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="5YM-wa-ALa"/>
         <segue reference="nfK-0O-zIH"/>
     </inferredMetricsTieBreakers>
     <resources>

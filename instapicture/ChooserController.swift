@@ -20,7 +20,7 @@ import MobileCoreServices
 enum KeychainError: Swift.Error {
     case whoops
 }
-class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, CLLocationManagerDelegate {
+class ChooserController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, CLLocationManagerDelegate {
     var locs: [CLLocation] = []
     @IBOutlet var selectPhoto: UIButton!
     @IBOutlet var takePhoto: UIButton!
